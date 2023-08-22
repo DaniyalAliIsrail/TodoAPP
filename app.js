@@ -10,7 +10,7 @@ function addList() {
   if (todoItemsvalue === "") {
     return Swal.fire({
       icon: 'error',
-      title: 'fill up input filled',
+      title: 'Fill up Input filled',
       text: 'Add todo',
       footer: '<a href="">Why do I have this issue?</a>'
     })
@@ -35,7 +35,16 @@ function editItems(e) {
   var val = e.parentNode.parentNode.firstElementChild.textContent;
   console.log(val);
   var editValue = prompt("update value",val)
+  if(!editValue == " ") {
   e.parentNode.parentNode.firstElementChild.textContent=editValue;
+  }else{
+    Swal.fire({
+      icon: 'error',
+      title:  'Fill up Input filled',
+      text: 'Add todo',
+      footer: '<a href="">Why do I have this issue?</a>'
+    })
+  }
 }
 const btn1=document.getElementById("deleteAll1")
 btn1.addEventListener("click",deleteAll)
